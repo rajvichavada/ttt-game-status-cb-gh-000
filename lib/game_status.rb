@@ -44,7 +44,7 @@ end
 
 def FULL?(board)
 board.all? do |combination|
-  "X"
+ combination = "X"
 end
 return false
 end
