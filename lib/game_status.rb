@@ -42,10 +42,13 @@ else
   return false
 end
 
-def FULL?(board)
+def full?(board)
+
   if board.all?{|i| i != " "}
     return true
   else
     return false
-end
+  end
+
+
 end
