@@ -43,9 +43,8 @@ else
 end
 
 def FULL?(board)
-board.all? do |combination|
- combination = "X"
- return true
-end
-return false
+  if board.all?{|i| i != " "}
+    return true
+  else
+    return false
 end
