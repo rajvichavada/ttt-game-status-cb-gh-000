@@ -15,30 +15,31 @@ WIN_COMBINATIONS = [
   [2,4,6], #2nd diagonal (right to left)
 ]
 
-def WON?(board)
-  ent = []
-board.select do |i|
-  if i == " "
-    ent << i
-  end
-  end
-  if ent.length == 9
-    return false
-  end
+def won?(board)
+    ent = []
+    board.select do |i|
+      if i == " "
+        ent << i
+      end
+      end
+      if ent.length == 9
+        return false
+      end
 
-  WIN_COMBINATIONS.each do |win_combo|
-    index1 = win_combo[0]
-    index2 = win_combo[1]
-    index3 = win_combo[2]
-    if board[index1] == "X" && board[index2] == "X" && board[index3] == "X"
-      return win_combo
-    end
-    if board[index1] == "O" && board[index2] == "O" && board[index3] == "O"
-      return win_combo
-    end
-  end
+      WIN_COMBINATIONS.each do |win_combo|
+        index1 = win_combo[0]
+        index2 = win_combo[1]
+        index3 = win_combo[2]
+        if board[index1] == "X" && board[index2] == "X" && board[index3] == "X"
+          return win_combo
+        end
+        if board[index1] == "O" && board[index2] == "O" && board[index3] == "O"
+          return win_combo
+        end
+      end
 
 else
-return false
+  return false
+
 
 end
