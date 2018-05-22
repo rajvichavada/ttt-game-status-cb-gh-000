@@ -54,3 +54,36 @@ end
 def draw?(board)
 
 end
+
+def draw?(board)
+  if board.all?{|i| i != " "} && !(won?(board))
+    return true
+  end
+  if won?(board)
+    return false
+  end
+  if !(won?(board)) && board.any?{|e| e == " "}
+    return false
+  end
+end
+
+
+def over?(board)
+  if won?(board) || full?(board)
+    return true
+  end
+end
+
+def winner(board)
+
+if !(won?(board))
+  return nil
+end
+
+if won?(board)
+  return board[won?(board)[0]]
+else
+  return nil
+end
+
+end
